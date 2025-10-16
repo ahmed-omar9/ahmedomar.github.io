@@ -3,9 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="icon" href="fanays logo.png">
-  <title>Fanays Travel and Cargo</title>
-   <style>
+  <title>Fanays Travel & Cargo</title>
+  <style>
     /* RESET */
     * {
       margin: 0;
@@ -17,6 +16,7 @@
     body {
       background-color: #ffffff;
       color: #001f3f;
+      scroll-behavior: smooth;
     }
 
     header {
@@ -30,7 +30,7 @@
       width: 100%;
       top: 0;
       z-index: 1000;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+      box-shadow: 0 2px 10px rgba(0,0,0,0.2);
     }
 
     header h1 {
@@ -55,8 +55,9 @@
       color: #ffcc00;
     }
 
+    /* HERO SECTION */
     .hero {
-      background-color: #001f3f;
+      background: linear-gradient(rgba(0, 31, 63, 0.8), rgba(0, 31, 63, 0.8)), url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e') no-repeat center center/cover;
       height: 100vh;
       display: flex;
       flex-direction: column;
@@ -64,41 +65,118 @@
       justify-content: center;
       color: white;
       text-align: center;
-      background-image: url('logo.jpg');
-      background-repeat: no-repeat;
-      background-position: center 20%;
-      background-size: 180px;
+      padding-top: 60px;
+    }
+
+    .hero img {
+      width: 180px;
+      margin-bottom: 25px;
+      border-radius: 10px;
     }
 
     .hero h2 {
-      margin-top: 200px;
-      font-size: 2rem;
-      font-weight: 600;
-      color: white;
+      font-size: 2.2rem;
+      margin-bottom: 10px;
     }
 
+    .hero p {
+      font-size: 1.1rem;
+      max-width: 600px;
+    }
+
+    /* SECTION STYLING */
     section {
       padding: 100px 50px;
       text-align: center;
     }
 
     section h2 {
-      font-size: 1.8rem;
+      font-size: 2rem;
       margin-bottom: 20px;
       color: #001f3f;
     }
 
     section p {
-      max-width: 800px;
+      max-width: 900px;
       margin: 0 auto;
       line-height: 1.7;
       color: #333;
+      font-size: 1.05rem;
     }
 
-    .services {
+    /* ABOUT */
+    #about {
       background-color: #f8f9fb;
     }
 
+    /* SERVICES */
+    .services-list {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+      margin-top: 40px;
+    }
+
+    .service {
+      background-color: #001f3f;
+      color: white;
+      border-radius: 15px;
+      padding: 25px;
+      max-width: 280px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+      transition: transform 0.3s ease;
+    }
+
+    .service:hover {
+      transform: scale(1.05);
+    }
+
+    .service h3 {
+      margin-bottom: 10px;
+      color: #ffcc00;
+    }
+
+    /* DESTINATIONS */
+    .destinations {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+      margin-top: 40px;
+    }
+
+    .destination {
+      width: 250px;
+      background-color: #f8f9fb;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+    }
+
+    .destination:hover {
+      transform: scale(1.05);
+    }
+
+    .destination img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+
+    .destination h3 {
+      color: #001f3f;
+      margin-top: 10px;
+    }
+
+    .destination p {
+      padding: 0 15px 20px;
+      color: #333;
+      font-size: 0.95rem;
+    }
+
+    /* CONTACT FORM */
     .contact form {
       max-width: 600px;
       margin: 0 auto;
@@ -143,126 +221,113 @@
       color: #ffcc00;
       text-decoration: none;
     }
+
+    @media (max-width: 768px) {
+      .services-list, .destinations {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
   </style>
 </head>
-
 <body>
 
-  <!-- ===== Navigation ===== -->
-  <nav>
-    <ul>
-      <li><a href="#home">Home</a></li>
-      <li><a href="#about">About</a></li>
-      <li><a href="#destinations">Destinations</a></li>
-      <li><a href="#services">Services</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-  </nav>
-
-  <!-- ===== Hero Section ===== -->
-  <header id="home">
-    <h1>Fanays Travel and Cargo</h1>
-    <p>Explore the world with us — unforgettable journeys await!</p>
-    <a href="#contact">Book Your Visit With Us</a>
+  <header>
+    <h1>Fanays Travel & Cargo</h1>
+    <nav>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#destinations">Destinations</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
   </header>
 
-  <!-- ===== About Section ===== -->
-  <section class="about" id="about">
+  <section class="hero" id="home">
+    <img src="logo.jpg" alt="Fanays Logo">
+    <h2>Explore the World, Move with Confidence</h2>
+    <p>We connect your dreams to destinations and deliver your goods with care.</p>
+  </section>
+
+  <section id="about">
     <h2>About Us</h2>
     <p>
-      Fanays Travel and Cargo is your gateway to adventure. From exotic tropical islands to mountain expeditions, we craft unforgettable experiences tailored to your dreams. With our professional team and global partners, your journey is in safe hands.
+      Fanays Travel & Cargo is a Nairobi-based travel and logistics agency built on trust, convenience, and exceptional service. 
+      From air ticketing to cargo solutions, we bring the world closer by providing seamless travel experiences and dependable transport management. 
+      Our commitment is to make every journey — whether personal or business — smooth, safe, and unforgettable.
     </p>
   </section>
 
-  <!-- ===== Destinations Section ===== -->
-  <section class="destinations" id="destinations">
-    <h2>Popular Destinations</h2>
-    <div class="destination-grid">
-      <div class="card">
-        <img src="https://images.unsplash.com/photo-1519125323398-675f0ddb6308" alt="Paris">
-        <h3>Paris, France</h3>
-        <p>The city of lights — where romance meets timeless architecture.</p>
-      </div>
-      <div class="card">
-        <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e" alt="Maldives">
-        <h3>Maldives</h3>
-        <p>Turquoise waters, white sand beaches, and tropical luxury.</p>
-      </div>
-      <div class="card">
-        <img src="https://images.unsplash.com/photo-1505761671935-60b3a7427bad" alt="Tokyo">
-        <h3>Tokyo, Japan</h3>
-        <p>A vibrant blend of tradition and modern technology.</p>
-      </div>
-    </div>
-  </section>
- 
-
-  <!-- ===== Services Section ===== -->
-  <section class="services" id="services">
+  <section id="services">
     <h2>Our Services</h2>
-    <div class="service-list">
-      <div class="service-item">
-        <h3>Visa application</h3>
-        <p>We find the best deals and convenient visa of your choice.</p>
+    <div class="services-list">
+      <div class="service">
+        <h3>Visa Application</h3>
+        <p>We assist clients with visa processing for various countries, ensuring your travel documents are in perfect order and stress-free.</p>
       </div>
-      <div class="service-item">
-        <h3>Flight reservations</h3>
-        <p>We find the best deals and convenient flight routes worldwide</p>
+      <div class="service">
+        <h3>Flight Management & Booking</h3>
+        <p>We handle flight scheduling, booking, and management to make your travel effortless and convenient.</p>
       </div>
-      <div class="service-item">
-        <h3>Manage cargo and goods</h3>
-        <p>Experience a smooth cargo shipment.</p>
+      <div class="service">
+        <h3>Cargo & Goods Handling</h3>
+        <p>Our cargo division ensures safe and efficient transport of goods across borders — by air or sea.</p>
       </div>
-      <div class="service-item">
+      <div class="service">
         <h3>Custom Packages</h3>
-        <p>We design personalized itineraries for solo, family, or group travel.</p>
+        <p>We design travel packages tailored to your budget and preferences — for holidays, business trips, or relocations.</p>
       </div>
     </div>
-     <section id="location">
-    <h2>Our Location</h2>
-    <p>We are located in Nairobi, Kenya. Visit our office at Al-ameen Shopping Complex for personalized travel consultations.</p>
-    <!-- 🌍 Embedded Google Map -->
-    <iframe
-      
-      loading="lazy">
-    </iframe>
   </section>
 
-  <!-- ===== Contact Section ===== -->
-  <section id="contact">
-  <h2>Contact Us</h2>
-  <p>We’d love to hear from you! Please fill in the form below:</p>
-  
-<form
-  action="https://formspree.io/f/xeorvdwg"
-  method="POST"
->
-  <label>
-    Your email:
-    <input type="email" name="email">
-  </label>
-  <label>
-    Your message:
-    <textarea name="message"></textarea>
-  </label>
-  <!-- your other form fields go here -->
-  <button type="submit">Send</button>
-</form>
-  
-  <p style="margin-top:15px;">Or reach us directly:</p>
-  <p>📞 +254 797 317 333</p>
-  <p> titkok page @fanaystravelcargo <p>
-  <p>🏢 Nairobi , Kenya</p>
-</section>
+  <section id="destinations">
+    <h2>Popular Destinations</h2>
+    <div class="destinations">
+      <div class="destination">
+        <img src="https://images.unsplash.com/photo-1543349689-9a4d0d4a37ef" alt="Germany">
+        <h3>Germany</h3>
+        <p>Experience the charm of Europe’s engineering hub — from Berlin’s culture to Munich’s elegance.</p>
+      </div>
+      <div class="destination">
+        <img src="https://images.unsplash.com/photo-1504805572947-34fad45aed93" alt="Canada">
+        <h3>Canada</h3>
+        <p>Explore the majestic Rockies, cosmopolitan Toronto, and friendly vibes of the Great White North.</p>
+      </div>
+      <div class="destination">
+        <img src="https://images.unsplash.com/photo-1586971362863-208b1f9b02e2" alt="Ireland">
+        <h3>Ireland</h3>
+        <p>Discover Ireland’s rolling green landscapes and the warm spirit of its people.</p>
+      </div>
+      <div class="destination">
+        <img src="https://images.unsplash.com/photo-1581349481597-0b8d5fdf1a7f" alt="Switzerland">
+        <h3>Switzerland</h3>
+        <p>Witness breathtaking Alps, luxury escapes, and precision service in the heart of Europe.</p>
+      </div>
+    </div>
+  </section>
 
-  
-  <!-- ===== Footer ===== -->
+  <section id="contact" class="contact">
+    <h2>Contact Us</h2>
+    <p>Visit us in Nairobi, Eastleigh (opposite Galmart Supermarket) or send us a message below.</p>
+    <p>Follow us on our Tiktok page @fanaystravelcargo or contact us via 0797 317 333</p>
+    <form action="https://formspree.io/f/xeorvdwg" method="POST">
+      <input type="text" name="name" placeholder="Your Name" required />
+      <input type="email" name="email" placeholder="Your Email" required />
+      <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </section>
+
   <footer>
-    <p>© 2025 Fanays Travel and Cargo | Designed by Sumaya </p>
+    <p>&copy; 2025 Fanays Travel & Cargo | Nairobi, Kenya | All Rights Reserved</p>
   </footer>
 
 </body>
 </html>
+
+
 
 
 
